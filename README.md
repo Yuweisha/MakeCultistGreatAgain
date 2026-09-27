@@ -2,6 +2,8 @@
 
 《杀戮尖塔 2》模组：把一代的邪教徒头套等元素带回二代。开局在涅奥面前多出三个选择，选完照常进入涅奥的原生遗物三选一。
 
+创意工坊：https://steamcommunity.com/sharedfiles/filedetails/?id=3807672118
+
 ## 内容
 
 开局涅奥首屏新增三个选项：
@@ -61,3 +63,7 @@ MakeCultistGreatAgain.json             模组清单
 模组 id 为 `MakeCultistGreatAgain`，游戏按它拼接 `MakeCultistGreatAgain.dll`、`MakeCultistGreatAgain.pck` 以及 `res://MakeCultistGreatAgain/...` 资源路径，改名时需要一并修改。
 
 作者：BuenaVista
+
+## 许可
+
+[MIT](LICENSE)

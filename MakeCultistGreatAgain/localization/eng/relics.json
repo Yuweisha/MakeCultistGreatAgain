@@ -1,0 +1,10 @@
+{
+  "CULTIST_HEADPIECE_RELIC.title": "Cultist Headpiece",
+  "CULTIST_HEADPIECE_RELIC.description": "A moment after each combat begins, a crow caws.",
+  "CULTIST_HEADPIECE_RELIC.flavor": "\"Wear it, and the Spire will take you as one of its own.\"",
+  "CULTIST_HEADPIECE_RELIC.battlecry": "[jitter][red]My power is unmatched![/red][/jitter]",
+  "RITUAL_DAGGER_RELIC.title": "Ritual Dagger",
+  "RITUAL_DAGGER_RELIC.description": "A moment after each combat begins, a crow caws and you gain 3 [gold]Ritual[/gold]. Your max HP is reduced by 10.",
+  "RITUAL_DAGGER_RELIC.flavor": "\"Blood must flow for power to enter.\"",
+  "RITUAL_DAGGER_RELIC.battlecry": "[jitter][red]My power is unmatched![/red][/jitter]"
+}

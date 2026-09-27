@@ -1,0 +1,58 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1">
+  <PropertyGroup>
+    <!-- Game runtime is net9.0 (sts2.runtimeconfig.json: 9.0.7). Mod DLL must target net9.0. -->
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>true</ImplicitUsings>
+    <LangVersion>13.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <!-- Only compile code under src/, keep Godot editor scripts out -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+
+    <Sts2Dir>D:\OtherFiles\SteamLibrary\steamapps\common\Slay the Spire 2</Sts2Dir>
+    <Sts2DataDir>$(Sts2Dir)\data_sts2_windows_x86_64</Sts2DataDir>
+    <GodotPath>C:\Games\Godot_v4.5.1-stable_mono_win64\Godot_v4.5.1-stable_mono_win64.exe</GodotPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src\**\*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="sts2">
+      <HintPath>$(Sts2DataDir)\sts2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="0Harmony">
+      <HintPath>$(Sts2DataDir)\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <!-- Export the Godot resources (sounds, localization) into MakeCultistGreatAgain.pck -->
+  <Target Name="ExportPck" AfterTargets="Build" Condition="Exists('$(GodotPath)')">
+    <Message Text="Exporting mod pck..." Importance="high" />
+    <Exec Command="&quot;$(GodotPath)&quot; --headless --path &quot;$(MSBuildProjectDirectory)&quot; --export-pack &quot;ModExport&quot; &quot;$(TargetDir)MakeCultistGreatAgain.pck&quot;" />
+  </Target>
+
+  <!-- Copy dll, pck and json into the game mods folder -->
+  <Target Name="Copy Mod" AfterTargets="ExportPck" Condition="!Exists('$(GodotPath)')">
+    <ItemGroup>
+      <ModFiles Include="$(TargetPath)" />
+      <ModFiles Include="$(MSBuildProjectDirectory)\MakeCultistGreatAgain.json" />
+    </ItemGroup>
+    <MakeDir Directories="$(Sts2Dir)\mods\MakeCultistGreatAgain\" />
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(Sts2Dir)\mods\MakeCultistGreatAgain\" />
+  </Target>
+
+  <Target Name="Copy Mod With Pck" AfterTargets="ExportPck" Condition="Exists('$(GodotPath)')">
+    <ItemGroup>
+      <ModFiles Include="$(TargetPath)" />
+      <ModFiles Include="$(TargetDir)MakeCultistGreatAgain.pck" />
+      <ModFiles Include="$(MSBuildProjectDirectory)\MakeCultistGreatAgain.json" />
+    </ItemGroup>
+    <MakeDir Directories="$(Sts2Dir)\mods\MakeCultistGreatAgain\" />
+    <Copy SourceFiles="@(ModFiles)" DestinationFolder="$(Sts2Dir)\mods\MakeCultistGreatAgain\" />
+  </Target>
+</Project>

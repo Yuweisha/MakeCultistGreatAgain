@@ -1,0 +1,10 @@
+{
+  "CULTIST_HEADPIECE_RELIC.title": "邪教徒头套",
+  "CULTIST_HEADPIECE_RELIC.description": "你觉得自己有开腔的欲望。",
+  "CULTIST_HEADPIECE_RELIC.flavor": "\"自己人！自己人！\"",
+  "CULTIST_HEADPIECE_RELIC.battlecry": "[jitter][red]我的力量无人能及！[/red][/jitter]",
+  "RITUAL_DAGGER_RELIC.title": "仪式匕首",
+  "RITUAL_DAGGER_RELIC.description": "你似乎被同化了，获得 3 层[gold]仪式[/gold]。你的最大生命值减少 10。",
+  "RITUAL_DAGGER_RELIC.flavor": "\"这把小刀似乎带给了你一种奇异的力量。\"",
+  "RITUAL_DAGGER_RELIC.battlecry": "[jitter][red]我的力量无人能及！[/red][/jitter]"
+}

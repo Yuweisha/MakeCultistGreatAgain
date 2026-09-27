@@ -1,0 +1,12 @@
+{
+  "id": "MakeCultistGreatAgain",
+  "name": "MCGA 让咔咔再次伟大",
+  "author": "BuenaVista",
+  "description": "你觉得你有开腔的欲望。将一代邪教徒头套等带回二代，另外更有惊喜。",
+  "version": "0.1.0",
+  "min_game_version": "0.111.0",
+  "has_pck": true,
+  "has_dll": true,
+  "dependencies": [],
+  "affects_gameplay": true
+}

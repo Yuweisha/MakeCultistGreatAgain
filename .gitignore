@@ -1,0 +1,12 @@
+# Godot 4 导入缓存与编辑器状态
+.godot/
+.import/
+
+# .NET 构建产物
+bin/
+obj/
+*.user
+
+# 系统文件
+Thumbs.db
+.DS_Store
